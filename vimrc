@@ -644,7 +644,7 @@ endif
 
 " Set extra options when running in GUI mode
 if has("gui_running")
-    set guifont=Monaco:h14
+    set guifont=Monaco:h9
     if has("gui_gtk2")   "GTK2
         set guifont=Monaco\ 12,Monospace\ 12
     endif
@@ -657,6 +657,12 @@ if has("gui_running")
     set linespace=2
     set noimd
     set t_Co=256
+
+    " gui的编码格式设置
+    source $VIMRUNTIME/delmenu.vim
+    source $VIMRUNTIME/menu.vim
+    language messages zh_CN.utf-8
+    au GUIEnter * simalt ~x
 endif
 
 
